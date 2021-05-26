@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(80, 69, 69);
+}
+
+.cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.numDiv{
+    background: cadetblue;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.numDiv div{
+    color: #fff;
+    font-size: 22px;
+}
+
+.colorDiv{
+    height: 50px;
+    border-radius: 2px;
+    background: cornsilk;
+}
+
+.generate{
+    width: 95px;
+}
