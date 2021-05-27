@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="text" cols="30" rows="10"></textarea><br>
+     <button>A</button>
+     <button>Space</button>
+     <button>B</button> 
+     <button>Enter</button> 
+     <button>Back</button> 
+
+     <script>
+         var text = document.querySelector('#text')
+         var btn = document.querySelectorAll('button') 
+
+         var a =''
+         btn[0].addEventListener('click', function() {
+            a += "a"
+             text.textContent = a
+           
+         })
+
+         btn[1].addEventListener('click', function() {
+            a += " "
+             text.textContent = a
+            
+         })
+
+         btn[2].addEventListener('click', function() {
+            a += "b"
+             text.textContent = a
+         })
+         btn[3].addEventListener('click', function(e) {
+            a+= "\n"
+            
+         })
+
+         btn[4].addEventListener('click', function(e) {
+            a = a.slice(0, a.length-1)
+             text.textContent = a
+            
+         })
+
+         document.addEventListener('keydown', function(e) {
+             console.log(e.code);
+             if (e.code == "KeyA") {
+                btn[0].style.backgroundColor = "red"
+                btn[0].style.color = "#fff"
+                a += "a"
+                text.textContent = a
+             }
+         })
+
+         document.addEventListener('keyup', function(e) {
+            if (e.code == "KeyA") {
+                btn[0].style.backgroundColor = ""
+                btn[0].style.color = ""
+             }
+         })
+     </script>
+</body>
+</html>
