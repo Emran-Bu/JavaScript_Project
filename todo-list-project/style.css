@@ -1,0 +1,67 @@
+:root{
+    --mainWhite : #f5f5f5;
+    --mainGreen: #80cfa9;
+    --mainBlack: #333333;
+    --mainRed: #d62828;
+    --mainBlue: #11b5e4;
+}
+
+body{
+    background: var(--mainWhite);
+}
+
+#itemInput{
+    border-color: var(--mainGreen);
+    background: transparent;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-icon{
+    font-size: 1.2rem;
+}
+
+.complete-item{
+    color: var(--mainGreen)
+}
+
+.complete-item:hover{
+    color: var(--mainGreen)
+}
+
+.edit-item{
+    color: var(--mainBlue);
+}
+
+.edit-item:hover{
+    color: var(--mainBlue);
+}
+
+.delete-item {
+    color: var(--mainRed)
+}
+
+.delete-item:hover {
+    color: var(--mainRed)
+}
+
+/* .feedback {
+    display: none;
+} */
+
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.visibility{
+    opacity: 0.5;
+}
+
+.showItem{
+    display: block;
+}
