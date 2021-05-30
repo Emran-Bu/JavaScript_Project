@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message | Project</title>
+    <style>
+        body{
+            background: #95b8d1;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: cadetblue;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .messageA{
+            font-size: 22px;
+            color: chartreuse;
+        }
+
+        #message{
+            outline: 0;
+            height: 25px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #submitBtn{
+            height: 30px;
+            background: tomato;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #submitBtn:hover{
+            background: violet;
+        }
+
+        .feedback{
+            background: rgb(247, 105, 235);
+            width: 70%;
+            font-size: 15px;
+            margin-left: 42px;
+            padding: 5px;
+            color: rgb(109, 0, 0);
+            display: none;
+        }
+
+        .show{
+            display: block;
+        }
+
+        .lastMessage{
+            font-size: 18px;
+            color: wheat;
+        }
+
+        .messageContent{
+            text-transform: uppercase;
+            font-size: 25px;
+            color: turquoise;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="formDiv">
+                <h3 class="messageA">A Message Would like to pass</h3>
+                <form action="" id="messageForm">
+                    <input type="text" id="message">
+                    <input type="submit" id="submitBtn">
+                </form>
+            </div>
+
+            <div class="cont">
+                <h5 class="feedback">Please Enter a Value To Pass</h5>
+                <h4 class="lastMessage">Last Message Delivered</h4> 
+                <h4 class="messageContent">Hello World</h4>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var messageForm = document.querySelector('#messageForm')
+        var message = document.querySelector('#message')
+        var messageContent = document.querySelector('.messageContent')
+        var feedback = document.querySelector('.feedback')
+
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault()
+
+            if (message.value == '') {
+                feedback.classList.add('show')
+
+                setTimeout(()=>{
+                    feedback.classList.remove('show')
+                }, 2000)
+            } else{
+                messageContent.textContent = message.value
+                message.value = ""
+            }
+        })
+
+    </script>
+</body>
+</html>
