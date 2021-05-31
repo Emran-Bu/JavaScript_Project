@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage check</title>
+
+    <style>
+        *{
+            outline: 0;
+            border: none;
+        }
+        body{
+            background: teal;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: tan;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .cont{
+            /* padding: 40px; */
+        }
+
+        .input{
+            margin-bottom: 10px;
+        }
+
+        #takaLabel{
+            color: rgb(6, 1, 255);
+        }
+
+        #takaInput{
+            width: 80px;
+            height: 25px;
+            border-radius: 5px;
+            margin-left: 32px;
+        }
+
+        #percentLabel{
+            color: rgb(67, 102, 107);
+        }
+
+        #percentInput{
+            width: 80px;
+            height: 25px;
+            border-radius: 5px;
+            margin-left: 15px;
+        }
+
+        .submitDiv{
+            margin-top: 15px;
+            margin-left: 148px;
+        }
+
+        #submitBtn{
+            background: slategrey;
+            padding: 8px;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            width: 80px;
+            cursor: pointer;
+        }
+
+        #summary{
+            color: whitesmoke;
+        }
+
+        #total{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <div class="calculateDiv">
+                <form id="checkForm" action="">
+                    <div class="input">
+                        <label for="" id="takaLabel">মোট পরিমাণ: ৳</label>
+                        <input id="takaInput" type="amount" name="amount" step="0.01" min="0">
+                    </div>
+    
+                    <div class="input2">
+                        <label id="percentLabel" for="">শতাংশ পরিমাণ: %</label>
+                        <input id="percentInput" type="number" name="percent" step="0.01" min="0" max="">
+                    </div>
+    
+                    <div class="submitDiv">
+                        <input id="submitBtn" type="submit" value="ফলাফল">
+                    </div>
+                </form>
+            </div>
+
+            <div class="result">
+                <p id="summary"></p>
+                <p id="total"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let checkForm = document.querySelector('#checkForm')
+        let summary = document.querySelector('#summary')
+        let total = document.querySelector('#total')
+
+        checkForm.addEventListener('submit', function(e) {
+            e.preventDefault(e)
+            let takaInput = Number(checkForm.amount.value)
+            let percentInput = Number(checkForm.percent.value)
+            let decimal = percentInput/100
+            let totalAmount = Number((takaInput * decimal).toFixed(2))
+            console.log(totalAmount);
+
+            if (takaInput == '' || percentInput == '') {
+                alert('দয়া করে আপনার পরিমান গুলো দিন')
+            }
+
+            if (percentInput < 0 || percentInput > 100) {
+                alert('দয়া করে ০ এবং ১০০ শতাংশের মধ্যে একটি পরিমাণ লিখুন')
+            }
+
+            checkForm.amount.value = ""
+            checkForm.percent.value = ""
+
+            summary.textContent = `${takaInput} টাকায় ${percentInput} শতাংশে মোট ${totalAmount} টাকা আসে।`
+
+            total.textContent = `আপনার মোট বিল ${Number((takaInput + totalAmount).toFixed(2))} টাকা আসে।`
+        })
+    </script>
+</body>
+</html>
