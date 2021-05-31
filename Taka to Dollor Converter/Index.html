@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taka To Dollar Converter</title>
+
+    <style>
+        *{
+            outline: 0;
+            border: none;
+        }
+
+        body{
+            background: teal;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: tan;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .input{
+            margin-bottom: 10px;
+        }
+
+        #takaLabel{
+            color: rgb(6, 1, 255);
+        }
+
+        #dollarInput{
+            width: 80px;
+            height: 25px;
+            border-radius: 5px;
+            margin-left: 32px;
+        }
+
+        #percentLabel{
+            color: rgb(67, 102, 107);
+        }
+
+        #TakaInput{
+            width: 80px;
+            height: 25px;
+            border-radius: 5px;
+            margin-left: 31px;
+        }
+
+        .submitDiv{
+            margin-top: 15px;
+            margin-left: 148px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+
+            <div class="calculateDiv">
+                <form id="checkForm" action="">
+                    <div class="input">
+                        <label for="" id="takaLabel">Enter Your Dollar: $</label>
+                        <input id="dollarInput" type="text" name="amount" step="0.01" min="0">
+                    </div>
+                    
+                    <div class="input2">
+                        <label id="percentLabel" for="">Bangladeshi Taka: ৳ </label>
+                        <input id="TakaInput" type="number" name="percent" step="0.01" min="0" max="">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        let dollarInput = document.querySelector('#dollarInput')
+
+        let TakaInput = document.querySelector('#TakaInput')
+
+        dollarInput.addEventListener('keyup', function() {
+            var dollar = this.value
+            TakaInput.value = (dollar*84.65).toFixed(2)
+            // Number((dollar*84.65).toFixed(2))
+        })
+
+        TakaInput.addEventListener('keyup', function() {
+            var dollar = this.value
+            dollarInput.value = (dollar/84.65).toFixed(2)
+            // Number((dollar/84.65).toFixed(2))
+        })
+
+
+    </script>
+</body>
+</html>
