@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Counter Project</title>
+    <style>
+        body{
+            background: url('mainBcg.jpeg');
+            color: #fff;
+        }
+
+        .wrapper{
+            min-height: 100vh;
+        }
+
+        .main-container{
+            border: 1px solid #fff;
+            border-radius: 2px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        #counter{
+            color: #7fb800;
+            font-size: 160px;
+            color: #333333;
+        }
+        .prevBtn, .nextBtn{
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.9);
+            background: #0d2c54;
+            color: #fff;
+        }
+
+        .prevBtn:hover , .nextBtn:hover{
+            background: #00a6ed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row wrapper align-items-center">
+            <div class="col-10 col-md-6 mx-auto text-center p-5 main-container">
+
+                <h1 class="text-uppercase">Counter</h1>
+                <h1 id="counter">0</h1>
+
+                <div class="btn-container d-flex justify-content-around flex-wrap">
+                    <button class="prevBtn btn text-uppercase m-2">Lower Count</button>
+                    <button class="nextBtn btn text-uppercase m-2">Add Count</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let counter = document.querySelector('#counter')
+        let prevBtn = document.querySelector('.prevBtn')
+        let nextBtn = document.querySelector('.nextBtn')
+
+        let count = 0
+
+        function color() {
+            if (count < 0) {
+                counter.style.color = 'red'
+            } else if (count > 0) {
+                counter.style.color = 'green'
+            } else{
+                counter.style.color = '#333333'
+            }
+        }
+
+        nextBtn.addEventListener('click', function() {
+            count++
+            counter.innerHTML = count
+            color()
+        })
+
+        prevBtn.addEventListener('click', function() {
+            count--
+            counter.innerHTML = count
+            color()
+        })
+
+        
+
+        // prevBtn.addEventListener('click', function() {
+            
+        //     let count = 100
+        //     var stop = setInterval(() => {
+
+        //     counter.innerHTML = count
+        //     counter.style.color = "blue"
+            
+        //         if (count <= 0) {
+        //             clearInterval(stop)
+        //         }
+        //         count--
+        //     }, 20);
+            
+        // })
+
+        // nextBtn.addEventListener('click', function() {
+        //     setInterval(() => {
+        //         count++
+        //         counter.innerHTML = count
+        //         counter.style.color = "green"
+        //     }, 1000);
+                
+        // })
+    </script>
+</body>
+</html>
