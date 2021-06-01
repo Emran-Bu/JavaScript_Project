@@ -62,26 +62,29 @@
 
         let count = 0
 
-        function color() {
-            if (count < 0) {
-                counter.style.color = 'red'
-            } else if (count > 0) {
-                counter.style.color = 'green'
-            } else{
-                counter.style.color = '#333333'
-            }
-        }
+        prevBtn.addEventListener('click', function() {
+            
+            let count = 100
+            var stop = setInterval(() => {
 
-        nextBtn.addEventListener('click', function() {
-            count++
             counter.innerHTML = count
-            color()
+            counter.style.color = "blue"
+            
+                if (count <= 0) {
+                    clearInterval(stop)
+                }
+                count--
+            }, 20);
+            
         })
 
-        prevBtn.addEventListener('click', function() {
-            count--
-            counter.innerHTML = count
-            color()
+        nextBtn.addEventListener('click', function() {
+            setInterval(() => {
+                count++
+                counter.innerHTML = count
+                counter.style.color = "green"
+            }, 1000);
+                
         })
 
     </script>
