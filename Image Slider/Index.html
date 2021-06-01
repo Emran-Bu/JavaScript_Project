@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Image Slider</title>
+    <style>
+        .max-height{
+            min-height: 100vh;
+        }
+
+        body{
+            background: #f2fdff;
+        }
+
+        .img-container{
+            min-height: 60vh;
+            background: url("img/contBcg-0.jpeg") center/cover fixed no-repeat;
+            border: 0.5rem solid #3e92cc;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        @media screen and (min-width: 768px){
+            .img-container {
+                min-height: 80vh;
+            }
+        }
+
+        .btn-left {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #3e92cc;
+            color: #f2fdff !important;
+            transform: translate(-50%, -50%);
+            border: 0.2rem solid #3e92cc;
+            font-size: 1.2rem;
+        }
+
+        .btn-left:hover {
+            border-color: #3e92cc;
+            background: #f2fdff;
+            color: #3e92cc !important;
+        }
+
+        .btn-right {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background: #3e92cc;
+            color: #f2fdff !important;
+            font-size: 1.2rem;
+            transform: translate(50%, -50%);
+            border: 0.2rem solid #3e92cc;
+            }
+
+        .btn-right:hover {
+            border-color: #3e92cc;
+            background: #f2fdff;
+            color: #3e92cc !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row max-height align-items-center">
+             <div class="col-9 col-md-10 mx-auto img-container">
+                <a class="btn btn-left" href=""><i class="fas fa-caret-left"></i></a>
+                <a class="btn btn-right" href=""><i class="fas fa-caret-right"></i></a>
+             </div>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelectorAll('.btn')
+        let image = document.querySelector('.img-container')
+
+        let counter = 0
+        let pictures = [
+            "contBcg-0",
+            "contBcg-1",
+            "contBcg-2",
+            "contBcg-3",
+            "contBcg-4"
+        ]
+
+        for (const buttons of btn) {
+            buttons.addEventListener('click', function(e) {
+                e.preventDefault()
+                if (buttons.classList.contains('btn-left')) {
+                    counter--
+                    if (counter < 0) {
+                        counter = pictures.length - 1
+                        console.log(counter);
+                    }
+                    image.style.backgroundImage = `url('img/${pictures[counter]}.jpeg')`
+                    
+                }
+
+                if (buttons.classList.contains('btn-right')) {
+                    counter++
+                    if (counter > pictures.length - 1) {
+                        counter = 0
+                    }
+                    image.style.backgroundImage = `url('img/${pictures[counter]}.jpeg')`
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
