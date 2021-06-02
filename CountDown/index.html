@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+    <style>
+        body{
+            background: rgb(201, 187, 187);
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .wrapper{
+            background: turquoise;
+            height: 500px;
+            width: 1200px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            position: relative;
+        }
+
+        .centerAlign{
+            /* height: 400px; */
+            width: 850px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            /* background: cornsilk; */
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .div1{
+            background: yellowgreen;
+            height: 200px;
+            width: 200px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            /* display: inline-block; */
+            /* float: left; */
+            /* align-items: center; */
+            /* top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            margin-right: 5px; */
+        }
+
+        .div1:nth-child(4){
+            margin-right: 0;
+        }
+
+        .outer{
+            background: chocolate;
+            height: 150px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outer1{
+            background: cadetblue;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner{
+            background: rgb(0, 0, 0);
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .inner h1{
+            /* color: whitesmoke; */
+            font-size: 50px;
+            background: url('wallpaper9.jpg') center/cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* padding: 15px; */
+        }
+
+        
+
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hTitle{
+            font-size: 45px;
+            background: -webkit-linear-gradient(red, green, white);
+            -webkit-background-clip : text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }      
+
+        /*  */
+
+        .innerName{
+            top: 69%;
+            left: 50%;
+            transform: translate(-50%, -69%);
+            position: absolute;
+            display: flex;
+            /* align-items: center;
+            justify-content: center;
+            position: relative; */
+        }
+
+        .innerName  h2{
+            /* top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+            font-size: 18px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 0px 73px 0px 88px;
+            /* background: cornflowerblue; */
+            border: 1px solid blueviolet;
+            padding: 2px;
+            border-radius: 1px;
+            color: rgb(29, 14, 168);
+            box-shadow: 1px 1px 1px 0px black;
+        }
+
+        .innerName  h2:hover{
+            background: chartreuse;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cont">
+            <div class="title">
+                <h1 class="hTitle">Countdown Project</h1>
+            </div>
+            <div class="wrapper">
+                    <div class="centerAlign">
+                        <div class="div1">
+                            <div class="outer">
+                                <div class="outer1">
+                                    <div class="inner"><h1 class="timer days">00</h1></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div1">
+                            <div class="outer">
+                                <div class="outer1">
+                                    <div class="inner"><h1 class="timer hour">00</h1></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div1">
+                            <div class="outer">
+                                <div class="outer1">
+                                    <div class="inner"><h1 class="timer minutes">00</h1></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div1">
+                            <div class="outer">
+                                <div class="outer1">
+                                    <div class="inner"><h1 class="timer second">00</h1></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- wrapper div -->
+
+                <div class="mainName">
+
+                    <div class="outerName">
+                        <div class="innerName">
+                            <h2>Days</h2>
+                            <h2>Hours</h2>
+                            <h2>Minutes</h2>
+                            <h2>Second</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- wrapper div -->
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        var timer = document.querySelectorAll('.timer')
+        let count = 0
+
+//amar code
+
+        // var inpS = 6000000;
+        // var inpS = 6220801;
+
+        // var fMin = parseInt(inpS/60)
+        // var fhr = parseInt(fMin/60)
+        // var fday = parseInt(fhr/24)
+        // var fmonth = parseInt(fday/30)
+        // var day = parseInt(fday%30)
+        // var hr = parseInt(fhr%24)
+        // var min = parseInt(fMin%60)
+        // var sec = parseInt(inpS%60)
+
+        // console.log(fmonth,day,hr,min,sec);
+//
+
+        var second = 6220801*16
+        // var second = 5100
+       
+        var clear = setInterval(() => {
+        var year = parseInt(second/(1*60*60*24*30*12))
+        var yearModule = (second%(1*60*60*24*30*12))
+        var month = parseInt(yearModule/(1*60*60*24*30))
+        var monthModule = (yearModule%(1*60*60*24*30))
+        var day = parseInt(monthModule/(1*60*60*24))
+        document.querySelector('.days').innerHTML = day
+        var dayModule = (monthModule%(1*60*60*24))
+        var hours = parseInt(dayModule/(1*60*60))
+        document.querySelector('.hour').innerHTML = hours
+        var hoursModule = (dayModule%(1*60*60))
+        var min = parseInt(hoursModule/(1*60))
+        document.querySelector('.minutes').innerHTML = min
+        var sec = (hoursModule%(1*60))
+        document.querySelector('.second').innerHTML = sec
+        // console.log(year,month, day, hours, min, sec);
+        
+
+        if (second == 0) {
+            clearInterval(clear)
+        }
+        second--
+
+        }, 1000);
+
+    </script>
+</body>
+</html>

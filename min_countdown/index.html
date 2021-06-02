@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Countdown</title>
+</head>
+<body>
+    <span id="timer">2:0</span>
+
+
+    <script>
+        var timer = document.querySelector('#timer')
+
+        var min = 12;
+        var sec = 60;
+
+       var clear = setInterval(() => {
+            timer.innerHTML = min + ':' + sec
+            sec--
+            
+            if (sec == 0) {
+                min--
+                sec = 60;
+                
+                if (min == 0) {
+                    clearInterval(clear)
+                    sec = 0
+                   
+                 }
+
+                 if (min == 0 && sec == 0) {
+                    timer.innerHTML = "Time Up"
+                 }
+            }
+           
+            // console.log(min,sec);
+        }, 1000);
+    </script>
+</body>
+</html>
