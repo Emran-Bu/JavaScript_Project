@@ -14,6 +14,34 @@
         .container{
             text-align: center;
             margin: 0 auto;
+            width: 500px;
+        }
+
+        input{
+            padding: 15px;
+            margin: 20px;
+            font-size: 19px;
+        }
+
+        .clock{
+            background: blue;
+            width: 400px;
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            /* font-size: 1em; */
+        }
+
+        .clock > span{
+            padding: 10px;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .clock > span > span {
+            padding: 5px;
+            background: red;
+            border-radius: 10px;
         }
 
     </style>
@@ -22,15 +50,143 @@
 
     <div class="container">
         <input type="date" name="endDate">
-        <div>
+        <div class="clock">
             <span><span class="days">0</span> Days</span>
-            <span><span class="days">0</span> Hours</span>
+            <span><span class="hours">0</span> Hours</span>
             <span><span class="minutes">0</span> Minutes</span>
             <span><span class="seconds">0</span> Seconds</span>
         </div>
     </div>
 
     <script>
+
+        // let endDate = document.querySelector("input[name='endDate']")
+        // let clock = document.querySelector('.clock')
+
+        
+        // let timeInterval;
+        // var timeStop = true;
+
+        // let savedValue = localStorage.getItem('countdown') || false;
+
+        // if (savedValue) {
+        //     startClock(savedValue)
+        //     let inputValue = new Date(savedValue)
+        //     endDate.valueAsDate = inputValue
+        // }
+
+        // endDate.addEventListener('change', function(e) {
+        //     e.preventDefault()
+        //     clearInterval(timeInterval);
+        //     let temp = new Date(endDate.value)
+        //     localStorage.setItem('countdown', temp)
+        //     startClock(temp)
+        //     timeStop(true)
+        // })
+        
+        // function startClock(d) {
+
+        //     if (timeStop) {
+        //        var  timeInterval = setInterval(() => {
+        //         let tl = (timeLeft(d))
+        //         if (tl.total <= 0) {
+        //             timeStop = false;
+        //         }
+        //         for (let pro in tl) {
+        //             let el = clock.querySelector("." + pro)
+        //             if (el) {
+        //                 el.innerHTML = tl[pro]
+        //             } 
+        //         }
+
+        //         }, 1000);
+                
+        //     }
+        //     else {
+        //         clearInterval(timeInterval);
+        //     }
+        // }
+
+        // function timeLeft(d) {
+        //     let currenDate = new Date()
+        //     let t = Date.parse(d) - Date.parse(currenDate)
+        //     let seconds = Math.floor((t/1000)%60);
+        //     let minutes = Math.floor((t/1000/60)%60);
+        //     let hours = Math.floor((t/1000/60*60)%24);
+        //     let days = Math.floor((t/1000/60*60*24));
+        //     console.log(days);
+        //     return {
+        //         "total": t,
+        //         "days": days,
+        //         "hours": hours,
+        //         "minutes": minutes,
+        //         "seconds": seconds
+        //     }
+        // }
+
+        
+
+
+
+        /////////////////////////////////////////
+
+        const endDate = document.querySelector("input[name='endDate']");
+        const clock = document.querySelector(".clock");
+        let timeInterval;
+        let timeStop = true;
+        const savedValue = localStorage.getItem("countdown") || false;
+        if (savedValue) {
+            startClock(savedValue);
+            let inputValue = new Date(savedValue);
+            endDate.valueAsDate = inputValue;
+        }
+        endDate.addEventListener("change", function (e) {
+            e.preventDefault();
+            clearInterval(timeInterval);
+            const temp = new Date(endDate.value);
+            localStorage.setItem("countdown", temp);
+            startClock(temp);
+            timeStop = true;
+        })
+ 
+
+        function startClock(d) {
+            function updateCounter() {
+                let tl = (timeLeft(d));
+                if (tl.total <= 0) {
+                    timeStop = false;
+                }
+                for (let pro in tl) {
+                    let el = clock.querySelector("." + pro);
+                    if (el) {
+                        el.innerHTML = tl[pro];
+                    }
+                }
+            }
+            updateCounter();
+            if (timeStop) {
+                timeInterval = setInterval(updateCounter, 1000);
+            }
+            else {
+                clearInterval(timeInterval);
+            }
+        }
+ 
+        function timeLeft(d) {
+            let currentDate = new Date();
+            let t = Date.parse(d) - Date.parse(currentDate);
+            let seconds = Math.floor((t / 1000) % 60);
+            let minutes = Math.floor((t / 1000 / 60) % 60);
+            let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            let days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+                "total": t
+                , "days": days
+                , "hours": hours
+                , "minutes": minutes
+                , "seconds": seconds
+            };
+        }
 
     </script>
 </body>
