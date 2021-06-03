@@ -11,3 +11,15 @@ var hoursModule = (dayModule%(1*60*60))
 var min = parseInt(hoursModule/(1*60))
 var sec = (hoursModule%(1*60))
 console.log(year,month, day, hours, min, sec);
+
+
+// var sec = 171072000
+// var month = parseInt(sec/(1*60*60*24*30))
+// var monthModule = (sec%(1*60*60*24*30))
+// var day = parseInt(monthModule/(1*60*60*24))
+// var dayModule = (monthModule%(1*60*60*24))
+// var hours = parseInt(dayModule/(1*60*60))
+// var hoursModule = (dayModule%(1*60*60))
+// var min = parseInt(hoursModule/(1*60))
+// var sec = (hoursModule%(1*60))
+// console.log(month, day, hours, min, sec);
