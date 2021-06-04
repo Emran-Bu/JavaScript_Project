@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pounds To Kg</title>
+    <style>
+        .container{
+            width: 500px;
+            margin: 0 auto;
+            background: slateblue;
+            color: #fff;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h1>Weight Converter (Pounds To Kg)</h1>
+            <p>Enter weight value in pounds:</p>
+            <label for="">Pounds</label>
+            <input type="number" step=".1">
+            <p>Your weight in kilogram is: <span class="result"></span></p>
+        </form>
+    </div>
+
+    <script>
+
+        let form = document.querySelector('form')
+        let inputValue = document.querySelector('input')
+        let result = document.querySelector('.result')
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault()
+            var value = inputValue.value/2.2
+            result.innerHTML = value.toFixed(2) + " kg"
+            inputValue.value = null
+        })
+
+    </script>
+</body>
+</html>
