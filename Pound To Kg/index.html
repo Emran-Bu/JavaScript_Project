@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pounds To Kg</title>
     <style>
+        *{
+            outline: 0;
+        }
         .container{
             width: 500px;
             margin: 0 auto;
             background: slateblue;
             color: #fff;
             padding: 25px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -34,9 +38,21 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault()
-            var value = inputValue.value/2.2
-            result.innerHTML = value.toFixed(2) + " kg"
-            inputValue.value = null
+            // var value = inputValue.value/2.2
+            // result.innerHTML = value.toFixed(2) + " kg"
+            // inputValue.value = null
+
+            if (inputValue.value == '') {
+                inputValue.style.borderColor = 'red'
+                result.innerHTML = '<h4>Please enter a value number!</h4>'
+                result.style.color = "red"
+            } else{
+                var value = inputValue.value/2.2
+                result.innerHTML = value.toFixed(2) + " kg"
+                inputValue.style.borderColor = ''
+                inputValue.value = null
+                result.style.color = ""
+            }
         })
 
     </script>
