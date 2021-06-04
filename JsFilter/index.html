@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Project</title>
+
+    <style>
+
+        body{
+            background: #ddd;
+        }
+
+        .container{
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .button{
+            border: 1px solid aqua;
+            padding: 15px;
+        }
+
+        .store{
+            margin-top: 50px;
+        }
+
+        .store-item{
+            border: 1px solid aqua;
+            padding: 15px;
+        }
+
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="button">
+            <button data-filter="allCountry">all country</button>
+            <button data-filter="bangladesh">bangladesh</button>
+            <button data-filter="india">india</button>
+            <button data-filter="pakistan">pakistan</button>
+            <button data-filter="srilanka">srilanka</button>
+            <button data-filter="nepal">nepal</button>
+            <button data-filter="vutan">vutan</button>
+            <button data-filter="muldip">muldip</button>
+            <button data-filter="australia">Australia</button>
+        </div>
+
+        <div class="store" data-item="allCountry">
+            <div class="store-item bangladesh" data-item="bangladesh">
+                <h1>bangladesh</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+
+                <div class="store-item bangladesh" data-item="bangladesh">
+                    <h1>bangladesh</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+                </div>
+
+            </div>
+
+            <div class="store-item india" data-item="india">
+                <h1>India</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+            <div class="store-item pakistan" data-item="pakistan">
+                <h1>pakistan</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+            <div class="store-item srilanka" data-item="srilanka">
+                <h1>srilanka</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+            <div class="store-item nepal" data-item="nepal">
+                <h1>nepal</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+            <div class="store-item vutan" data-item="vutan">
+                <h1>vutan</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+            <div class="store-item muldip" data-item="muldip">
+                <h1>muldip</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+
+            <div class="store-item australia" data-item="australia">
+                <h1>Australia</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nesciunt autem. Nostrum, nulla aliquam?</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var button = document.querySelectorAll('button')
+        var storeItem = document.querySelectorAll('.store-item')
+        
+// my 1st rule
+        // var store = document.querySelector('.store')
+
+        // var bangladesh = document.querySelector('.bangladesh')
+        // var india = document.querySelector('.india')
+        // var pakistan = document.querySelector('.pakistan')
+        // var srilanka = document.querySelector('.srilanka')
+        // var nepal = document.querySelector('.nepal')
+        // var vutan = document.querySelector('.vutan')
+        // var muldip = document.querySelector('.muldip')
+
+        for (let btn of button) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault()
+                let filter = e.target.dataset.filter
+
+// my 1st rule
+                // if (filter === 'allCountry') {
+                //     store.style.display = 'block'
+                // }
+                
+                // else if (filter === 'bangladesh') {
+                //     bangladesh.style.display = 'block'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'india') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'block'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'pakistan') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'block'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'srilanka') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'block'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'nepal') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'block'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'vutan') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'block'
+                //     muldip.style.display = 'none'
+                // }
+
+                // else if (filter === 'muldip') {
+                //     bangladesh.style.display = 'none'
+                //     india.style.display = 'none'
+                //     pakistan.style.display = 'none'
+                //     srilanka.style.display = 'none'
+                //     nepal.style.display = 'none'
+                //     vutan.style.display = 'none'
+                //     muldip.style.display = 'block'
+                // }
+                
+                // else{
+                //     store.style.display = 'none'
+                // }
+
+// My shortcut rule
+                for (let item of storeItem) {
+                    if (filter === 'allCountry') {
+                        item.style.display = 'block'
+                        
+                    } 
+
+                    else{
+                        if (item.classList.contains(filter)) {
+                            item.style.display = 'block'
+                        } else{
+                            item.style.display = 'none'
+                        }
+                    }
+
+                }
+
+                console.log(filter);
+ 
+            })
+        }
+    </script>
+</body>
+</html>
