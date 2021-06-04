@@ -25,11 +25,10 @@
   
         inp.addEventListener('change', function(e) {
             e.preventDefault()
-            // let countDownDate = new Date(inp.value).getTime()
 
-            
             let clear = setInterval(() => {
-                let countDownDate = new Date(inp.value).getTime()
+
+            let countDownDate = new Date(inp.value).getTime()
             let now = new Date().getTime()
             let distance = countDownDate - now
 
@@ -65,8 +64,6 @@
        
         })
 
-        
-        // console.log(countDownDate);
     </script>
 </body>
 </html>
