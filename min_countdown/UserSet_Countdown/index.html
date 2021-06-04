@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set_Countdown</title>
+    <style>
+        p{
+            text-align: center;
+            font-size: 60px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <input type="datetime-local" name="" id="inp">
+
+    <script>
+
+        let inp = document.querySelector('#inp')
+        // let countDownDate = new Date("june 5, 2021 10:00:00").getTime()
+  
+        inp.addEventListener('change', function(e) {
+            e.preventDefault()
+            // let countDownDate = new Date(inp.value).getTime()
+
+            
+            let clear = setInterval(() => {
+                let countDownDate = new Date(inp.value).getTime()
+            let now = new Date().getTime()
+            let distance = countDownDate - now
+
+            distance /= 1000
+
+            let years = parseInt(distance/(60*60*24*30*12))
+            let temp = parseInt(distance%(60*60*24*30*12))
+            let months = parseInt(temp/(60*60*24*30))
+            temp = parseInt(temp%(60*60*24*30))
+            let days = parseInt(temp/(60*60*24))
+            temp = parseInt(temp%(60*60*24))
+            let hours = parseInt(temp/(60*60))
+            temp = parseInt(temp%(60*60))
+            let mins = parseInt(temp/(60))
+            let sec = parseInt(temp%(60))
+
+            // let days = Math.floor(distance/(1000*60*60*24))
+            // let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+            // let minutes = Math.floor((distance%(1000*60*60))/(1000*60))
+            // let seconds = Math.floor((distance%(1000*60))/1000)
+             
+            document.getElementById('demo').innerHTML = years + "y " + months + "m " + days + "d " + hours + "h " + mins + "m " + sec + "s";
+            
+
+            if (distance < 0) {
+                clearInterval(clear)
+                document.getElementById('demo').innerHTML = "EXPIRED"
+            }
+            // distance--
+            // console.log(distance);
+            
+        }, 1000);
+       
+        })
+
+        
+        // console.log(countDownDate);
+    </script>
+</body>
+</html>
