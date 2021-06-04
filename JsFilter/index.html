@@ -49,7 +49,8 @@
             <button data-filter="nepal">nepal</button>
             <button data-filter="vutan">vutan</button>
             <button data-filter="muldip">muldip</button>
-            <button data-filter="australia">Australia</button>
+            <button data-filter="australia">australia</button>
+            <input type="text" name="" id="searchItem" placeholder="search ...">
         </div>
 
         <div class="store" data-item="allCountry">
@@ -100,8 +101,54 @@
     <script>
         var button = document.querySelectorAll('button')
         var storeItem = document.querySelectorAll('.store-item')
+        var searchItem = document.querySelector('#searchItem')
         
-// my 1st rule
+        for (let btn of button) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault()
+                let filter = e.target.dataset.filter
+
+               
+                for (let item of storeItem) {
+                    if (filter === 'allCountry') {
+                        item.style.display = 'block'
+                        
+                    } 
+
+                    else{
+                        if (item.classList.contains(filter)) {
+                            item.style.display = 'block'
+                        } else{
+                            item.style.display = 'none'
+                        }
+                    }
+
+                }
+
+                console.log(filter);
+ 
+            })
+        }
+
+
+        // search part
+
+        searchItem.addEventListener('keyup', function (e) {
+            let search = e.target.value.toLowerCase().trim()
+
+            for (let item of storeItem) {
+                if (item.textContent.includes(search)) {
+                    item.style.display = "block"
+                } else{
+                    item.style.display = "none"
+                }
+            }
+            // console.log(search);
+        })
+
+
+
+         // my 1st rule
         // var store = document.querySelector('.store')
 
         // var bangladesh = document.querySelector('.bangladesh')
@@ -111,11 +158,6 @@
         // var nepal = document.querySelector('.nepal')
         // var vutan = document.querySelector('.vutan')
         // var muldip = document.querySelector('.muldip')
-
-        for (let btn of button) {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault()
-                let filter = e.target.dataset.filter
 
 // my 1st rule
                 // if (filter === 'allCountry') {
@@ -197,26 +239,6 @@
                 // }
 
 // My shortcut rule
-                for (let item of storeItem) {
-                    if (filter === 'allCountry') {
-                        item.style.display = 'block'
-                        
-                    } 
-
-                    else{
-                        if (item.classList.contains(filter)) {
-                            item.style.display = 'block'
-                        } else{
-                            item.style.display = 'none'
-                        }
-                    }
-
-                }
-
-                console.log(filter);
- 
-            })
-        }
     </script>
 </body>
 </html>
