@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper{
+    overflow: hidden;
+}
+
+.div1{
+    background: rgb(54, 48, 39);
+    height: 10px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.innerDiv1{
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    top: 0;
+    left: -90%;
+    border-radius: 5px;
+    background: rgb(37, 0, 250);
+    transition: 1s all ease;
+}
+
+.div1:hover .innerDiv1{
+    left: 0;
+}
+
+/* 2nd */
+
+.div2{
+    background: rgb(54, 48, 39);
+    height: 10px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.innerDiv2{
+    position: absolute;
+    background: rgb(37, 0, 250);
+    height: 100%;
+    width: 80%;
+    top: 0;
+    left: -80%;
+    border-radius: 5px;
+    transition: 1s all ease;
+}
+
+.div2:hover .innerDiv2{
+    left: 0;
+}
+
+/* 3nd */
+
+.div3{
+    background: rgb(54, 48, 39);
+    height: 10px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.innerDiv3{
+    position: absolute;
+    background: rgb(37, 0, 250);
+    height: 100%;
+    width: 70%;
+    top: 0;
+    left: -70%;
+    border-radius: 5px;
+    transition: 1s all ease;
+}
+
+.div3:hover .innerDiv3{
+    left: 0;
+}
+
+/* 4th */
+
+.div4{
+    background: rgb(54, 48, 39);
+    height: 10px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.innerDiv4{
+    position: absolute;
+    background: rgb(37, 0, 250);
+    height: 100%;
+    width: 60%;
+    top: 0;
+    left: -60%;
+    border-radius: 5px;
+    transition: 1s all ease;
+}
+
+.div4:hover .innerDiv4{
+    left: 0;
+}
+
+/* div5 */
+
+.div5{
+    background: rgb(54, 48, 39);
+    height: 10px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.innerDiv5{
+    position: absolute;
+    background: rgb(37, 0, 250);
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: -50%;
+    border-radius: 5px;
+    transition: 1s all ease;
+}
+
+.div5:hover .innerDiv5{
+    left: 0;
+}
