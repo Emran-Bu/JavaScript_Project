@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeWritter</title>
+</head>
+<body>
+    <div>
+        <h1 id="example"><span class=""></span></h1>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/typer.min.js"></script>
+    <script>
+        $("#example").typer({
+        strings: [
+            "A great free jQuery plugin",
+            "Animates typing strings",
+            "Hosted In jQueryScript"
+        ],
+
+            typeSpeed: 60,
+            backspaceSpeed: 20,
+            backspaceDelay: 800,
+            repeatDelay: 1000,
+            repeat: true,
+            autoStart: true,
+            startDelay: 100,
+            useCursor:true
+
+        });
+    </script>
+</body>
+</html>
