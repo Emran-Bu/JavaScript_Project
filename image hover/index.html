@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image hover</title>
+
+    <style>
+
+        .imgDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img1{
+            height: 300px;
+            width: 300px;
+            display: inline-block;
+            border: 5px solid black;
+            transition: 0.2s all ease;
+            /* transform: translate3d(10px, 15px, 0px); */
+            transform-style: preserve-3d;
+
+        }
+
+        .img1 img{
+            margin: 25px;
+            height: 300px;
+            width: 300px;
+            transition: .5s;
+            /* transform: translate3d(10px, 15px, 0px); */
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imgDiv">
+            <div class="img1">
+                <img id="jpg36" src="img/36.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // let img1 = document.querySelector('.img1')
+        // let img1 = document.querySelector('.img1')
+        // let jpg36 = document.querySelector('#jpg36')
+        // let body = document.querySelector('body')
+
+        // body.addEventListener('mousemove', function() {
+        //     // img1.style.margin = Math.floor(Math.random()*15) + 'px'
+        //     // jpg36.style.margin = Math.floor(Math.random()*15) + 'px'
+
+
+        //     // img1.style.transform = 'translate('Math.floor(Math.random()*15) +' "px")'
+
+        //     // 'translate3d(Math.floor(Math.random()*15) + "px")'
+        //     // jpg36.style.transform = Math.floor(Math.random()*15) + 'px'
+        // })
+
+        $('body').mousemove(function(e) {
+           var moveX = (e.pageX * 1 / 30) 
+           var moveY = (e.pageY * 1 / 30) 
+           $('.img1').css('margin', moveX + 'px ' + moveY + 'px')
+
+        //    $('#jpg36').css('margin', moveX + 'px ' + moveY + 'px')
+        })
+
+        $('body').mousemove(function(e) {
+           var moveX = (e.pageX * 1 / 90) 
+           var moveY = (e.pageY * 1 / 30) 
+        //    $('.img1').css('margin', moveX + 'px ' + moveY + 'px')
+
+           $('#jpg36').css('margin', moveX + 'px ' + moveY + 'px')
+        })
+    </script>
+</body>
+</html>
