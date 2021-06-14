@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Confirm Password</title>
+</head>
+<body>
+    <form>
+        <label>
+            <strong>Username</strong>
+            <input type="text" name="" id="text">
+        </label>
+
+        <label>
+            <strong>Password</strong>
+            <input type="password" name="" id="password">
+        </label>
+
+        <label>
+            <strong>Confirm Password</strong>
+            <input type="password" name="" id="confirmPassword">
+        </label>
+        <button class="button" type="submit">Sign In</button>
+    </form>
+
+    <script>
+        let btn = document.querySelector('.button')
+        let text = document.querySelector('#text')
+        let password = document.querySelector('#password')
+        let confirmPassword = document.querySelector('#confirmPassword')
+        btn.onclick = function() {
+
+            if (password.value == "") {
+                alert('Field Cannot be empty.')
+            }
+            
+            else if (password.value != confirmPassword.value) {
+                alert("Password didn't Match try again.")
+            }
+
+            else if (password.value == confirmPassword.value) {
+                alert("Password Match.")
+            }
+            
+        }
+    </script>
+</body>
+</html>
