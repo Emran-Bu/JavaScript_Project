@@ -33,7 +33,6 @@ body{
     position: fixed;
     width: 8px;
     height: 8px;
-    /* border: 1px solid rgb(100, 21, 21); */
     background: #fff;
     border-radius: 50%;
     left: 0;
@@ -45,15 +44,13 @@ body{
 
 .content:hover ~ .cursor{
     opacity: 0;
-    /* transition: .2s all ease; */
-    /* transition: 0.5s; */
 }
 
 .content:hover ~ .cursor2{
-    
-    /* transform: translate(-50%, -50%) scale(10); */
+
     padding: 40px;
     background: rgb(100, 21, 21);
     opacity: 0.3;
     transition: 0.2s;
 }
+
