@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Time Message</title>
+
+    <style>
+        .canvas{
+            background: blue;
+            color: #fff;
+            font-size: 20px;
+            width: 60%;
+            height: 500px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #message h1{
+            color: orange;
+            font-size: 60px;
+        }
+
+        button{
+            margin-top: 50px;
+            font-size: 24px;
+            color: orchid;
+            background: rgb(107, 27, 16);
+            border-radius: 5px;
+        }
+
+        button:hover{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="canvas">
+        <h1>Click to Get Message!</h1>
+        <div id="message"></div>
+        <button>Get Message</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector('button')
+        let message = document.querySelector('#message')
+
+        let date = new Date()
+        let hour = date.getHours()
+        btn.addEventListener('click', function() {
+            if (hour > 17) {
+                message.innerHTML = '<h1>Good Evening!</h1>'
+            } 
+            else if (hour > 11.59){
+                message.innerHTML = '<h1>Good Afternoon!</h1>'
+            }
+            else{
+                message.innerHTML = '<h1>Good Morning!</h1>'
+            }
+        })
+    </script>
+    
+</body>
+</html>
