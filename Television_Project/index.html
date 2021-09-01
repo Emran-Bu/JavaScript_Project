@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Television</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <div class="tvDiv">
+                <div class="tvDisplay"><iframe src="https://www.youtube.com/embed/2ESaQKr2YVY" frameborder="0"></iframe></div>
+                <div class="tvStand"></div>
+                <div class="tvPalate"></div>
+            </div>
+
+            <button class="on">on</button>
+            <button class="off">off</button>
+        </div>
+    </div>
+
+    <script>
+
+        var on = document.querySelector('.on')
+        var off = document.querySelector('.off')
+        var iframe = document.querySelector('iframe')
+
+        var time = 0;
+        var play
+
+        on.addEventListener('click', function() {
+            if (time == 0) {
+                play = iframe.src += '?autoplay=1'
+                time = 1
+            }
+        })
+
+        off.addEventListener('click', function() {
+            play = play.slice(0, -11);
+            iframe.src = play
+            time = 0
+        })
+
+    </script>
+</body>
+</html>
