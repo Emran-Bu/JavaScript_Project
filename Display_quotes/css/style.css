@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body{
+    background: #b09e99;
+}
+
+.quote-container{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#generate-btn{
+    /* background-color: blue !important; */
+}
+
+.author {
+    color: #64b6ac;
+  }
